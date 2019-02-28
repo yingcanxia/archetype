@@ -30,7 +30,7 @@
 	<bean id="propertyConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">  
 		<property name="locations">  
 			<list>  
-                 <value>classpath:spring/dbconfig.properties</value><!-- 配置 -->
+                 <value>classpath*:spring/dbconfig.properties</value><!-- 配置 -->
                  <value>classpath*:jdbc.properties</value><!-- 配置 -->
             </list>  
         </property>  
@@ -98,9 +98,13 @@
 	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
     	<property name="dataSource" ref="dataSource" />
     	<!-- 加载mybatis配置文件 -->
-        <property name="configLocation" value="classpath:mybatis-config.xml"></property>
+        <property name="configLocation" value="classpath:mybatis.xml"></property>
         <!-- 加载sql映射文件 -->
         <property name="mapperLocations" value="classpath*:Mapper/*.xml"></property>
+    </bean>
+     <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+        <property name="basePackage" value="cn.shadow.archetype.dao"/>
+        <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"/>
     </bean>
     
     <bean id="sqlSessionTemplate" class="org.mybatis.spring.SqlSessionTemplate">
