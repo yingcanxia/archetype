@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+         PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+         "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+ 
+<generatorConfiguration>
+	<classPathEntry location="E:\mysql-connector-java-5.1.30.jar"/>
+	<context id="my" targetRuntime="MyBatis3Simple">
+		<property name="javaFileEncoding" value="UTF-8"/>
+		<property name="beginningDelimiter" value=""/>
+		<property name="endingDelimiter" value=""/>
+		<jdbcConnection driverClass="com.mysql.jdbc.Driver"
+			connectionURL="jdbc:mysql://127.0.0.1:3306/firealarm" userId="root" password="root">
+		</jdbcConnection>
+		
+		
+		
+		<javaModelGenerator targetPackage="cn.shadow.archetype.entity" targetProject="src\main\java">
+			<property name="enableSubPackages" value="true"/>
+			<property name="trimStrings" value="true"/>
+		</javaModelGenerator>
+
+		<sqlMapGenerator targetPackage="Mapper" targetProject="src\main\resources">
+			<property name="enableSubPackages" value="true"/>
+		</sqlMapGenerator>
+
+		<javaClientGenerator type="XMLMAPPER" targetPackage="cn.shadow.archetype.dao" targetProject="src\main\java">
+			<property name="enableSubPackages" value="true"/>
+		</javaClientGenerator>
+		<table schema="" tableName="city" domainObjectName="City" />
+	</context>
+</generatorConfiguration>
