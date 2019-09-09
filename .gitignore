@@ -1,0 +1,14 @@
+/*.project
+/.settings
+/archetype-common/target
+/archetype-common/*.classpath
+/archetype-common/*.project
+/archetype-common/.settings
+/archetype-dao/.settings
+/archetype-dao/target
+/archetype-dao/*.classpath
+/archetype-dao/*.project
+/archetype-web/.settings
+/archetype-web/target
+/archetype-web/*.classpath
+/archetype-web/*.project
