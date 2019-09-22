@@ -16,6 +16,16 @@
 			<param-value>utf-8</param-value>
 		</init-param>
 	</filter>
+	<filter>
+		<filter-name>SecurityFilter</filter-name>
+		<display-name>SecurityFilter</display-name>
+		<description></description>
+		<filter-class>cn.shadow.filter.SecurityFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>SecurityFilter</filter-name>
+		<url-pattern>*.do</url-pattern>
+	</filter-mapping>
 	<listener>
 		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
 	</listener>
